@@ -5,6 +5,8 @@
 use App\User;
 use Faker\Generator as Faker;
 
+use Illuminate\Support\Facades\Hash;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -16,11 +18,17 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-    ];
+$factory->define(User::class, function (Faker $faker)
+{
+  $date = $faker->date('Y-m-d').' '.$faker->time('H:i:s');
+  return [
+    'role_id' => 0,
+    'username' => $faker->unique()->userName,
+    'firstname' => $faker->firstName,
+    'lastname' => $faker->lastName,
+    'email' => $faker->unique()->safeEmail,
+    'password' => Hash::make($faker->password),
+    'created_at' => $date,
+    'updated_at' => $date,
+  ];
 });
-
-
