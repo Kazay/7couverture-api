@@ -2,10 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Comment;
 use Faker\Generator as Faker;
-
-use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +16,15 @@ use Illuminate\Support\Facades\Hash;
 |
 */
 
-$factory->define(User::class, function (Faker $faker)
+$factory->define(Comment::class, function (Faker $faker)
 {
   $date = $faker->date('Y-m-d').' '.$faker->time('H:i:s');
-  
+
   return [
-    'role_id' => 0,
-    'username' => $faker->unique()->userName,
-    'firstname' => $faker->firstName,
-    'lastname' => $faker->lastName,
-    'email' => $faker->unique()->safeEmail,
-    'password' => Hash::make($faker->password),
+    'post_id' => 0,
+    'user_id' => 0,
+    'content' => $faker->sentence(10, TRUE),
+    'isDeleted' => (bool) mt_rand(0, 1),
     'created_at' => $date,
     'updated_at' => $date,
   ];

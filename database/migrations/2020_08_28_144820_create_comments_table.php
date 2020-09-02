@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->foreignId('post_id');
             $table->foreignId('user_id');
             $table->text('content');
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }
