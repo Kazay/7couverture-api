@@ -127,7 +127,7 @@ if (! function_exists('remove_accents'))
      */
     function str_to_slug($string)
     {
-      return preg_replace('/ +/', '-', preg_replace('/[[:punct:]]+/', "", strtolower(remove_accents($string))));
+      return preg_replace('/ +/', '-', preg_replace('/[[:punct:]]+/', '', strtolower(remove_accents($string))));
     }
   }
 }
