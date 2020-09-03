@@ -16,7 +16,7 @@ class ApiController extends BaseController
     }
 
   /**
-   * Get all categories
+   * Get all records
    *
    * @return string JSON encoded return value
    */
@@ -26,8 +26,8 @@ class ApiController extends BaseController
   }
 
   /**
-   * Get specific category data
-   * @var int category id
+   * Get specific record
+   * @var int record id
    * 
    * @return string JSON encoded return value
    */
@@ -37,36 +37,36 @@ class ApiController extends BaseController
   }
 
   /**
-   * Insert a new category
+   * Insert a new record
    * @var Request
    * 
    * @return string JSON encoded return value
    */
   public function create(Request $request)
   {
-    $category = $this->model::create($request->all());
+    $object = $this->model::create($request->all());
 
-    return response()->json($category, 201);
+    return response()->json($object, 201);
   }
 
   /**
-   * Update a specific category
+   * Update a specific record
    * @var Request
-   * @var int category id
+   * @var int record id
    * 
    * @return string JSON encoded return value
    */
   public function update(Request $request, $id)
   {
-    $category = $this->model::findOrFail($id);
-    $category->update($request->all());
+    $object = $this->model::findOrFail($id);
+    $object->update($request->all());
 
-    return response()->json($category, 200);
+    return response()->json($object, 200);
   }
   
   /**
-   * Delete a specific category
-   * @var int category id
+   * Delete a specific record
+   * @var int record id
    * 
    * @return string JSON encoded return value
    */
