@@ -73,6 +73,6 @@ class ApiController extends BaseController
   public function delete($id)
   {
     $this->model::findOrFail($id)->delete();
-      return response('Category deleted Successfully', 200);
+      return response('Entry deleted Successfully', 200);
   }
 }
