@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Role;
 
-class CategoryController extends Controller
+class RoleController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,63 +18,64 @@ class CategoryController extends Controller
     }
 
     /**
-     * Get all categories
+     * Get all roles
      *
      * @return string JSON encoded return value
      */
     public function showAll()
     {
-      return response()->json(Category::all());
+      return response()->json(Role::all());
     }
 
     /**
-     * Get specific category data
-     * @var int category id
+     * Get specific role data
+     * @var int role id
      * 
      * @return string JSON encoded return value
      */
     public function showOne($id)
     {
-      return response()->json(Category::find($id));
+      return response()->json(Role::find($id));
     }
 
     /**
-     * Insert a new category
+     * Insert a new role
      * @var Request
      * 
      * @return string JSON encoded return value
      */
     public function create(Request $request)
     {
-      $category = Category::create($request->all());
+      $role = Role::create($request->all());
 
-      return response()->json($category, 201);
+      return response()->json($role, 201);
     }
 
     /**
-     * Update a specific category
+     * Update a specific role
      * @var Request
-     * @var int category id
+     * @var int role id
      * 
      * @return string JSON encoded return value
      */
     public function update(Request $request, $id)
     {
-      $category = Category::findOrFail($id);
-      $category->update($request->all());
+      $role = Role::findOrFail($id);
+      $role->update($request->all());
 
-      return response()->json($category, 200);
+      return response()->json($role, 200);
     }
-    
+
     /**
-     * Delete a specific category
-     * @var int category id
+     * Delete a specific role
+     * @var int role id
      * 
      * @return string JSON encoded return value
      */
     public function delete($id)
     {
-      Category::findOrFail($id)->delete();
-        return response('Category deleted Successfully', 200);
+      Role::findOrFail($id)->delete();
+        return response('Role deleted Successfully', 200);
     }
+
 }

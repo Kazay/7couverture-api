@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Comment;
 
-class CategoryController extends Controller
+class CommentController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,63 +18,64 @@ class CategoryController extends Controller
     }
 
     /**
-     * Get all categories
+     * Get all comments
      *
      * @return string JSON encoded return value
      */
     public function showAll()
     {
-      return response()->json(Category::all());
+      return response()->json(Comment::all());
     }
 
     /**
-     * Get specific category data
-     * @var int category id
+     * Get specific comment data
+     * @var int comment id
      * 
      * @return string JSON encoded return value
      */
     public function showOne($id)
     {
-      return response()->json(Category::find($id));
+      return response()->json(Comment::find($id));
     }
 
     /**
-     * Insert a new category
+     * Insert a new comment
      * @var Request
      * 
      * @return string JSON encoded return value
      */
     public function create(Request $request)
     {
-      $category = Category::create($request->all());
+      $comment = Comment::create($request->all());
 
-      return response()->json($category, 201);
+      return response()->json($comment, 201);
     }
 
     /**
-     * Update a specific category
+     * Update a specific comment
      * @var Request
-     * @var int category id
+     * @var int comment id
      * 
      * @return string JSON encoded return value
      */
     public function update(Request $request, $id)
     {
-      $category = Category::findOrFail($id);
-      $category->update($request->all());
+      $comment = Comment::findOrFail($id);
+      $comment->update($request->all());
 
-      return response()->json($category, 200);
+      return response()->json($comment, 200);
     }
-    
+
     /**
-     * Delete a specific category
-     * @var int category id
+     * Delete a specific comment
+     * @var int comment id
      * 
      * @return string JSON encoded return value
      */
     public function delete($id)
     {
-      Category::findOrFail($id)->delete();
-        return response('Category deleted Successfully', 200);
+      Comment::findOrFail($id)->delete();
+        return response('Comment deleted Successfully', 200);
     }
+
 }

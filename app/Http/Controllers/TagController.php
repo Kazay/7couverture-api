@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Tag;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,63 +18,64 @@ class CategoryController extends Controller
     }
 
     /**
-     * Get all categories
+     * Get all tags
      *
      * @return string JSON encoded return value
      */
     public function showAll()
     {
-      return response()->json(Category::all());
+      return response()->json(Tag::all());
     }
 
     /**
-     * Get specific category data
-     * @var int category id
+     * Get specific tag data
+     * @var int tag id
      * 
      * @return string JSON encoded return value
      */
     public function showOne($id)
     {
-      return response()->json(Category::find($id));
+      return response()->json(Tag::find($id));
     }
 
     /**
-     * Insert a new category
+     * Insert a new tag
      * @var Request
      * 
      * @return string JSON encoded return value
      */
     public function create(Request $request)
     {
-      $category = Category::create($request->all());
+      $tag = Tag::create($request->all());
 
-      return response()->json($category, 201);
+      return response()->json($Tag, 201);
     }
 
     /**
-     * Update a specific category
+     * Update a specific tag
      * @var Request
-     * @var int category id
+     * @var int tag id
      * 
      * @return string JSON encoded return value
      */
     public function update(Request $request, $id)
     {
-      $category = Category::findOrFail($id);
-      $category->update($request->all());
+      $tag = Tag::findOrFail($id);
+      $tag->update($request->all());
 
-      return response()->json($category, 200);
+      return response()->json($Tag, 200);
     }
-    
+
     /**
-     * Delete a specific category
-     * @var int category id
+     * Delete a specific tag
+     * @var int tag id
      * 
      * @return string JSON encoded return value
      */
     public function delete($id)
     {
-      Category::findOrFail($id)->delete();
-        return response('Category deleted Successfully', 200);
+      Tag::findOrFail($id)->delete();
+        return response('Tag deleted Successfully', 200);
     }
+
 }

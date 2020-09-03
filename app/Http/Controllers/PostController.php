@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Post;
 
-class CategoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,63 +18,64 @@ class CategoryController extends Controller
     }
 
     /**
-     * Get all categories
+     * Get all posts
      *
      * @return string JSON encoded return value
      */
     public function showAll()
     {
-      return response()->json(Category::all());
+      return response()->json(Post::all());
     }
 
     /**
-     * Get specific category data
-     * @var int category id
+     * Get specific post data
+     * @var int post id
      * 
      * @return string JSON encoded return value
      */
     public function showOne($id)
     {
-      return response()->json(Category::find($id));
+      return response()->json(Post::find($id));
     }
 
     /**
-     * Insert a new category
+     * Insert a new post
      * @var Request
      * 
      * @return string JSON encoded return value
      */
     public function create(Request $request)
     {
-      $category = Category::create($request->all());
+      $post = Post::create($request->all());
 
-      return response()->json($category, 201);
+      return response()->json($post, 201);
     }
 
     /**
-     * Update a specific category
+     * Update a specific post
      * @var Request
-     * @var int category id
+     * @var int post id
      * 
      * @return string JSON encoded return value
      */
     public function update(Request $request, $id)
     {
-      $category = Category::findOrFail($id);
-      $category->update($request->all());
+      $post = Post::findOrFail($id);
+      $post->update($request->all());
 
-      return response()->json($category, 200);
+      return response()->json($post, 200);
     }
-    
+
     /**
-     * Delete a specific category
-     * @var int category id
+     * Delete a specific post
+     * @var int post id
      * 
      * @return string JSON encoded return value
      */
     public function delete($id)
     {
-      Category::findOrFail($id)->delete();
-        return response('Category deleted Successfully', 200);
+      Post::findOrFail($id)->delete();
+        return response('Post deleted Successfully', 200);
     }
+
 }
