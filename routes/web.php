@@ -15,6 +15,10 @@
 //     return $router->app->version();
 // });
 
+$router->get('/', function () use ($router) {
+  return $router->app->version();
+});
+
 // API routes
 $router->group(['prefix' => 'api'], function () use ($router)
 {
