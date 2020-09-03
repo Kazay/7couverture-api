@@ -10,27 +10,63 @@ https://powerful-escarpment-05124.herokuapp.com/
 
 ### Categories
 
-> **GET** /api/categories <br/> > **GET** /api/categories/{id} <br/> > **POST** /api/categories/ <br/> > **PUT** /api/categories/{id} <br/> > **DELETE** /api/categories/{id} <br/>
+```
+GET /api/categories
+GET /api/categories/{id}
+POST /api/categories/
+PUT /api/categories/{id}
+DELETE /api/categories/{id}
+```
 
 ### Tags
 
-> **GET** /api/tags <br/> > **GET** /api/tags/{id} <br/> > **POST** /api/tags/ <br/> > **PUT** /api/tags/{id} <br/> > **DELETE** /api/tags/{id} <br/>
+```
+GET /api/tags
+GET /api/tags/{id}
+POST /api/tags/
+PUT /api/tags/{id}
+DELETE /api/tags/{id}
+```
 
 ### Roles
 
-> **GET** /api/roles <br/> > **GET** /api/roles/{id} <br/> > **POST** /api/roles/ <br/> > **PUT** /api/roles/{id} <br/> > **DELETE** /api/roles/{id} <br/>
+```
+GET /api/roles
+GET /api/roles/{id}
+POST /api/roles/
+PUT /api/roles/{id}
+DELETE /api/roles/{id}
+```
 
 ### Users
 
-> **GET** /api/users <br/> > **GET** /api/users/{id} <br/> > **POST** /api/users/ <br/> > **PUT** /api/users/{id} <br/> > **DELETE** /api/users/{id} <br/>
+```
+GET /api/users
+GET /api/users/{id}
+POST /api/users/
+PUT /api/users/{id}
+DELETE /api/users/{id}
+```
 
 ### Posts
 
-> **GET** /api/posts <br/> > **GET** /api/posts/{id} <br/> > **POST** /api/posts/ <br/> > **PUT** /api/posts/{id} <br/> > **DELETE** /api/posts/{id} <br/>
+```
+GET /api/posts
+GET /api/posts/{id}
+POST /api/posts/
+PUT /api/posts/{id}
+DELETE /api/posts/{id}
+```
 
 ### Comments
 
-> **GET** /api/comments <br/> > **GET** /api/comments/{id} <br/> > **POST** /api/comments/ <br/> > **PUT** /api/comments/{id} <br/> > **DELETE** /api/comments/{id} <br/>
+```
+GET /api/comments
+GET /api/comments/{id}
+POST /api/comments/
+PUT /api/comments/{id}
+DELETE /api/comments/{id}
+```
 
 ## DB Schema
 
@@ -60,3 +96,7 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ### License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+```
+
+```
