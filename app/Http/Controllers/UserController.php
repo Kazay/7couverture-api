@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class UserController extends ApiController
@@ -15,6 +16,7 @@ class UserController extends ApiController
     public function __construct()
     {
       $this->model = new User();
+      $this->middleware('auth');
     }
 
     /**
